@@ -156,6 +156,7 @@
     <Compile Include="Models\Customer.cs">
       <DependentUpon>KhareedoDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\EmailService.cs" />
     <Compile Include="Models\genMainSlider.cs">
       <DependentUpon>KhareedoDataModel.tt</DependentUpon>
     </Compile>

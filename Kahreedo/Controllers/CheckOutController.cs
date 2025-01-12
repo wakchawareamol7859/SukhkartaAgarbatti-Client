@@ -10,7 +10,14 @@ namespace Khareedo.Controllers
 {
     public class CheckOutController : Controller
     {
+        
         SukhkartaEntities db = new SukhkartaEntities();
+        private EmailService _emailService;
+        public CheckOutController()
+        {
+            // Initialize the email service
+            _emailService = new EmailService();
+        }
         // GET: CheckOut
         public ActionResult Index()
         {
@@ -26,6 +33,7 @@ namespace Khareedo.Controllers
         //PLACE ORDER--LAST STEP
         public ActionResult PlaceOrder(FormCollection getCheckoutDetails)
         {            
+
 
                 int shpID = 1;
                 if (db.ShippingDetails.Count() > 0)
@@ -84,9 +92,9 @@ namespace Khareedo.Controllers
                     db.OrderDetails.Add(OD);
                     db.SaveChanges();
                 }
+            _emailService.SendEmail(shpDetails.FirstName,shpDetails.Email, o.OrderID, shpDetails.Address, DateTime.Now);
 
-               
-                return RedirectToAction("Index","ThankYou");
+            return RedirectToAction("Index","ThankYou");
             
         }
 
