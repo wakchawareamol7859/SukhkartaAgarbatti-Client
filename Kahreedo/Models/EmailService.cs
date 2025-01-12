@@ -34,7 +34,7 @@ namespace Khareedo.Models
                             "Thank you for placing your order with us!<br/> We are pleased to confirm that your order has been successfully received and is being processed. <br/>" +
                             "Order Details:<br/>" +
                             "Order Number: " + orderID + "<br/>" +
-                            "Date of Purchase: " + purchasedate.ToString("MM-dd-yyyy") +
+                            "Date of Purchase: " + purchasedate.ToString("dd-MMM-yyyy") +
                             "<br/>You will receive another email with tracking details once your order has shipped. <br/><br/>" +
                             "If you have any questions or need assistance, feel free to reach out to our customer support team at " +
                             ConfigurationManager.AppSettings["SukhkartaAgarbattiEmail"] + " or " +
