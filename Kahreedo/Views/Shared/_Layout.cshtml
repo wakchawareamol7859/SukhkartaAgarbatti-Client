@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sukhkarta.Agarbatti | @ViewBag.Title</title>
+    <title> @(ViewBag.Title != null ? "Sukhkarta.Agarbatti | " + ViewBag.Title : "Sukhkarta.Agarbatti")</title>
 <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/css/font-awesome.css" rel="stylesheet" />
     <link href="~/Content/css/jquery.simpleLens.css" rel="stylesheet" />

@@ -11,7 +11,7 @@ namespace Khareedo.Controllers
     public class AccountController : Controller
     {
         SukhkartaEntities db = new SukhkartaEntities();
-
+        private EmailService _emailService;
         // GET: Account
         public ActionResult Index()
         {
@@ -63,6 +63,7 @@ namespace Khareedo.Controllers
                 {
                     TempShpData.UserID = cust.CustomerID;
                     Session["username"] = cust.UserName;
+                   // _emailService.SendEmail(shpDetails.FirstName, shpDetails.Email, o.OrderID, shpDetails.Address, DateTime.Now);
                     return RedirectToAction("Index", "Home");
                 }
                       
