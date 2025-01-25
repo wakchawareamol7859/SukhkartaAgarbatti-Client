@@ -175,7 +175,7 @@ namespace Khareedo.Controllers
         //GET PRODUCTS BY CATEGORY
         public ActionResult GetProductsByCategory(string categoryName, int? page)
         {
-            ViewBag.Categories = db.Categories.Select(x => x.Name).ToList();
+            ViewBag.Categories = db.Categories.Where(x=>x.isActive==true).Select(x => x.Name).ToList();
             ViewBag.TopRatedProducts = TopSoldProducts();
          
             ViewBag.RecentViewsProducts = RecentViewProducts();
