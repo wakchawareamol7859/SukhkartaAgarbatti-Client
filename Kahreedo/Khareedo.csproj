@@ -51,7 +51,13 @@
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Features, Version=5.0.17.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Features.5.0.17\lib\net461\Microsoft.AspNetCore.Http.Features.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.Primitives, Version=5.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.5.0.1\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
       <Private>True</Private>
@@ -61,12 +67,31 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -178,6 +203,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>KhareedoDataModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\MyVisitorCount.cs">
+      <DependentUpon>KhareedoDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Order.cs">
       <DependentUpon>KhareedoDataModel.tt</DependentUpon>
     </Compile>
@@ -211,11 +239,11 @@
     <Compile Include="Models\Supplier.cs">
       <DependentUpon>KhareedoDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>KhareedoDataModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\TempShpData.cs" />
     <Compile Include="Models\TopSoldProduct.cs" />
+    <Compile Include="Models\VisitorCount.cs">
+      <DependentUpon>KhareedoDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Wishlist.cs">
       <DependentUpon>KhareedoDataModel.tt</DependentUpon>
     </Compile>
@@ -242,7 +270,111 @@
     <Content Include="Content\css\theme-color\yellow-theme.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\img\Agarbatti\Kapoor.png" />
+    <Content Include="Content\img\Agarbatti\Lavender.png" />
+    <Content Include="Content\img\Agarbatti\PMogra.png" />
+    <Content Include="Content\img\Agarbatti\polo-shirt-1.png" />
+    <Content Include="Content\img\Agarbatti\polo-shirt-1222.png" />
+    <Content Include="Content\img\Agarbatti\polo-shirt-12222.png" />
+    <Content Include="Content\img\Agarbatti\polo-shirt-13.png" />
+    <Content Include="Content\img\Agarbatti\polo-shirt-4.png" />
+    <Content Include="Content\img\Agarbatti\polo-shirt-5.png" />
+    <Content Include="Content\img\Agarbatti\polo-shirt-51.png" />
+    <Content Include="Content\img\Agarbatti\polo-shirt-52.png" />
+    <Content Include="Content\img\Agarbatti\polo-shirt-6.png" />
+    <Content Include="Content\img\Agarbatti\Son_Champa.png" />
+    <Content Include="Content\img\Agarbatti\Suhkarta_Special.png" />
+    <Content Include="Content\img\Agarbatti\Suhkarta_Special1.png" />
+    <Content Include="Content\img\Agarbatti\t-shirt-1.png" />
+    <Content Include="Content\img\Agarbatti\t-shirt-13.jpg" />
+    <Content Include="Content\img\Agarbatti\t-shirt-15.png" />
+    <Content Include="Content\img\Attar\Asseel.png" />
+    <Content Include="Content\img\Attar\Assel-1.png" />
+    <Content Include="Content\img\Attar\Assel.png" />
+    <Content Include="Content\img\Attar\Chocolate mist.png" />
+    <Content Include="Content\img\Attar\Day Light.png" />
+    <Content Include="Content\img\Attar\Fresh Fusion.png" />
+    <Content Include="Content\img\Attar\IMG-20230904-WA0004__02.jpg" />
+    <Content Include="Content\img\Attar\IMG_20241110_211119__01.jpg" />
+    <Content Include="Content\img\Attar\IMG_20241110_211128__01.jpg" />
+    <Content Include="Content\img\Attar\Jasmin.png" />
+    <Content Include="Content\img\Attar\JF%28edited%29.png" />
+    <Content Include="Content\img\Attar\JF.png" />
+    <Content Include="Content\img\Attar\Khus.png" />
+    <Content Include="Content\img\Attar\Lavish Musk.png" />
+    <Content Include="Content\img\Attar\Legend.png" />
+    <Content Include="Content\img\Attar\Majestic Sandal.png" />
+    <Content Include="Content\img\Attar\Meditation.png" />
+    <Content Include="Content\img\Attar\Meditation_1.png" />
+    <Content Include="Content\img\Attar\Mogra.png" />
+    <Content Include="Content\img\Attar\Nazakat%28edited%29.png" />
+    <Content Include="Content\img\Attar\Nazakat-1.png" />
+    <Content Include="Content\img\Attar\Nazakat.png" />
+    <Content Include="Content\img\Attar\Nazakat_1.png" />
+    <Content Include="Content\img\Attar\Night Oudh.png" />
+    <Content Include="Content\img\Attar\Noor Paradise.png" />
+    <Content Include="Content\img\Attar\Noor.png" />
+    <Content Include="Content\img\Attar\Oudh.png" />
+    <Content Include="Content\img\Attar\PhotoRoom-20231219_110313__01.png" />
+    <Content Include="Content\img\Attar\PhotoRoom-20231219_110442.png" />
+    <Content Include="Content\img\Attar\PhotoRoom-20231219_110442__01.png" />
+    <Content Include="Content\img\Attar\PhotoRoom-20231219_111004__01.png" />
+    <Content Include="Content\img\Attar\PhotoRoom-20231219_113416__01.png" />
+    <Content Include="Content\img\Attar\PhotoRoom-20231219_114045__01.png" />
+    <Content Include="Content\img\Attar\PhotoRoom-20231220_190019__01.png" />
+    <Content Include="Content\img\Attar\Photoroom-20241211_211550.png" />
+    <Content Include="Content\img\Attar\Photoroom-20241211_212537.png" />
+    <Content Include="Content\img\Attar\Premium Rose.png" />
+    <Content Include="Content\img\Attar\Red Rose.png" />
+    <Content Include="Content\img\Attar\Sandal%28edited%29.png" />
+    <Content Include="Content\img\Attar\Sandal.png" />
+    <Content Include="Content\img\Attar\Sapphire Musk.png" />
+    <Content Include="Content\img\Attar\Shanaya Oudh.png" />
+    <Content Include="Content\img\Attar\Special.png" />
+    <Content Include="Content\img\Attar\SukhkartaSpecial-Photoroom.jpg" />
+    <Content Include="Content\img\Attar\SukhkartaSpecial-Photoroom.png" />
+    <Content Include="Content\img\Attar\SukhkartaSpecial.png" />
+    <Content Include="Content\img\BM.jpg" />
+    <Content Include="Content\img\BM.png" />
     <Content Include="Content\img\close-icon.png" />
+    <Content Include="Content\img\ConeDhoop\ChandanCone.png" />
+    <Content Include="Content\img\ConeDhoop\Kapoor_Gugal_Cone_Dhoop.png" />
+    <Content Include="Content\img\ConeDhoop\MangaldeepCone.png" />
+    <Content Include="Content\img\ConeDhoop\meditation cone dhoop __01.png" />
+    <Content Include="Content\img\ConeDhoop\meditation_cone-1.png" />
+    <Content Include="Content\img\ConeDhoop\meditation_cone.png" />
+    <Content Include="Content\img\ConeDhoop\meditation_cone_jpg.jpg" />
+    <Content Include="Content\img\ConeDhoop\Mogra Cone Dhoop .png" />
+    <Content Include="Content\img\ConeDhoop\MograCone.png" />
+    <Content Include="Content\img\ConeDhoop\Oman_01.png" />
+    <Content Include="Content\img\ConeDhoop\Orient_01.png" />
+    <Content Include="Content\img\ConeDhoop\Photoroom-20241021_110953-removebg-preview.png" />
+    <Content Include="Content\img\ConeDhoop\RaatRani.png" />
+    <Content Include="Content\img\ConeDhoop\RaatRani_1.png" />
+    <Content Include="Content\img\CupDhoop\Ayodhya.jpg" />
+    <Content Include="Content\img\CupDhoop\Chandan_Cup_Dhoop.jpg" />
+    <Content Include="Content\img\CupDhoop\Chandan_Cup_Dhoop.png" />
+    <Content Include="Content\img\CupDhoop\Chandan_Cup_Dhoop1.png" />
+    <Content Include="Content\img\CupDhoop\Kapoor Gugad.jpg" />
+    <Content Include="Content\img\CupDhoop\Kapoor Gugad1.png" />
+    <Content Include="Content\img\CupDhoop\Kesar.jpeg" />
+    <Content Include="Content\img\CupDhoop\Kesar.png" />
+    <Content Include="Content\img\CupDhoop\LOban.jpeg" />
+    <Content Include="Content\img\CupDhoop\LOban.png" />
+    <Content Include="Content\img\CupDhoop\Sukhkarta_special_cup_dhoop.jpg" />
+    <Content Include="Content\img\CupDhoop\Sukhkarta_special_cup_dhoop.png" />
+    <Content Include="Content\img\Dhoop\Delux Mogra__01.png" />
+    <Content Include="Content\img\Dhoop\meditation cone dhoop __01.png" />
+    <Content Include="Content\img\Dhoop\Natural Loban.png" />
+    <Content Include="Content\img\Dhoop\Oman __01.png" />
+    <Content Include="Content\img\Dhoop\Orient __01.png" />
+    <Content Include="Content\img\Dhoop\PhotoRoom-20231204_110044 %281%29__01_20240530_003909_0000.png.jpg" />
+    <Content Include="Content\img\Dhoop\PhotoRoom-20231228_172621__01.png" />
+    <Content Include="Content\img\Dhoop\Photoroom-20241021_105253.png" />
+    <Content Include="Content\img\Dhoop\Photoroom-20241021_110858.png" />
+    <Content Include="Content\img\Dhoop\Photoroom-20241111_122328.png" />
+    <Content Include="Content\img\Dhoop\Sandalwood.png" />
+    <Content Include="Content\img\Dhoop\Sukhkarta_Special_Dhoop.png" />
     <Content Include="Content\img\electronics\electronic-1.png" />
     <Content Include="Content\img\electronics\electronic-2.png" />
     <Content Include="Content\img\electronics\electronic-3.png" />
@@ -252,6 +384,8 @@
     <Content Include="Content\img\electronics\electronic-7.png" />
     <Content Include="Content\img\electronics\electronic-8.png" />
     <Content Include="Content\img\fashion-banner.jpg" />
+    <Content Include="Content\img\fashion-banner_1.jpg" />
+    <Content Include="Content\img\fashion-banner_3.jpg" />
     <Content Include="Content\img\fashion\1.jpg" />
     <Content Include="Content\img\fashion\2.jpg" />
     <Content Include="Content\img\fashion\3.jpg" />
@@ -266,6 +400,17 @@
     <Content Include="Content\img\favicon\favicon.ico" />
     <Content Include="Content\img\flag\english.jpg" />
     <Content Include="Content\img\flag\french.jpg" />
+    <Content Include="Content\img\Kapoor Dani\Blue_Kapoor_Dani.png" />
+    <Content Include="Content\img\Kapoor Dani\Diff_Kapoor_Dani.png" />
+    <Content Include="Content\img\Kapoor Dani\Ganesh_Kapoor_dani.jpg" />
+    <Content Include="Content\img\Kapoor Dani\Kapoor_Dani_1.jpg" />
+    <Content Include="Content\img\Kapoor Dani\Kapoor_Dani_2.jpg" />
+    <Content Include="Content\img\Kapoor Dani\Krishna_Kapoor_dani.jpg" />
+    <Content Include="Content\img\Kapoor Dani\Pink_Kapoor_Dani.png" />
+    <Content Include="Content\img\Kapoor Dani\Red_Kapoor_Dani.png" />
+    <Content Include="Content\img\Kapoor Dani\Screenshot_20241111-193753.jpg" />
+    <Content Include="Content\img\Kapoor Dani\Screenshot_20241111-193834.jpg" />
+    <Content Include="Content\img\Khus.png" />
     <Content Include="Content\img\logo.jpg" />
     <Content Include="Content\img\man-small-1.jpg" />
     <Content Include="Content\img\man\polo-shirt-1.png" />
@@ -275,12 +420,66 @@
     <Content Include="Content\img\man\polo-shirt-5.png" />
     <Content Include="Content\img\man\polo-shirt-6.png" />
     <Content Include="Content\img\man\t-shirt-1.png" />
+    <Content Include="Content\img\Masala Agarbatti\2024, 8_07_32 pm_20240530_003744_0000.png.jpg" />
+    <Content Include="Content\img\Masala Agarbatti\Black Amber.png" />
+    <Content Include="Content\img\Masala Agarbatti\Chandan_cover.png" />
+    <Content Include="Content\img\Masala Agarbatti\Dhuni.png" />
+    <Content Include="Content\img\Masala Agarbatti\IMG_20231204_093128.jpg" />
+    <Content Include="Content\img\Masala Agarbatti\IMG_5962.png" />
+    <Content Include="Content\img\Masala Agarbatti\IMG_6098.JPG" />
+    <Content Include="Content\img\Masala Agarbatti\Khus.png" />
+    <Content Include="Content\img\Masala Agarbatti\Lavendar.JPG" />
+    <Content Include="Content\img\Masala Agarbatti\Lavendar.png" />
+    <Content Include="Content\img\Masala Agarbatti\Masala Chandan.png" />
+    <Content Include="Content\img\Masala Agarbatti\Masala_Rose.png" />
+    <Content Include="Content\img\Masala Agarbatti\Meditation.png" />
+    <Content Include="Content\img\Masala Agarbatti\Natural_Chandanam.png" />
+    <Content Include="Content\img\Masala Agarbatti\Natural_Woods.png" />
+    <Content Include="Content\img\Masala Agarbatti\Parijat.png" />
+    <Content Include="Content\img\Masala Agarbatti\PhotoRoom-20231204_093447__01.png" />
+    <Content Include="Content\img\Masala Agarbatti\PhotoRoom-20231204_093653__01.png" />
+    <Content Include="Content\img\Masala Agarbatti\PhotoRoom-20231204_093741__01.png" />
+    <Content Include="Content\img\Masala Agarbatti\PhotoRoom-20231204_094226__01.png" />
+    <Content Include="Content\img\Masala Agarbatti\PhotoRoom-20231204_094309__01.png" />
+    <Content Include="Content\img\Masala Agarbatti\PhotoRoom-20231204_094433__01.png" />
+    <Content Include="Content\img\Masala Agarbatti\PhotoRoom-20231204_095356__01.png" />
+    <Content Include="Content\img\Masala Agarbatti\PhotoRoom-20231221_103332__01.png" />
+    <Content Include="Content\img\Masala Agarbatti\PhotoRoom-20231221_104104__01.png" />
+    <Content Include="Content\img\Masala Agarbatti\PhotoRoom-20231221_105022__01.png" />
+    <Content Include="Content\img\Masala Agarbatti\PhotoRoom-20231221_105310__01.png" />
+    <Content Include="Content\img\Masala Agarbatti\Photoroom-20240610_180534.png" />
+    <Content Include="Content\img\Masala Agarbatti\RAJNI.png" />
+    <Content Include="Content\img\Masala Agarbatti\Rajni1.JPG" />
+    <Content Include="Content\img\Masala Agarbatti\Rajni1.png" />
+    <Content Include="Content\img\Masala Agarbatti\Shardha_Masala.png" />
+    <Content Include="Content\img\Masala Agarbatti\wala.jpg" />
+    <Content Include="Content\img\Masala Agarbatti\WhatsApp Image 2024-01-27 at 7.20.59 PM.jpeg" />
+    <Content Include="Content\img\Masala Agarbatti\WhatsApp Image 2024-01-27 at 7.21.00 PM %281%29.jpeg" />
+    <Content Include="Content\img\Masala Agarbatti\WhatsApp Image 2024-01-27 at 7.21.00 PM %282%29.jpeg" />
+    <Content Include="Content\img\Masala Agarbatti\WhatsApp Image 2024-01-27 at 7.21.00 PM.jpeg" />
     <Content Include="Content\img\paypal.jpg" />
     <Content Include="Content\img\promo-banner-1.jpg" />
     <Content Include="Content\img\promo-banner-2.jpg" />
     <Content Include="Content\img\promo-banner-3.jpg" />
+    <Content Include="Content\img\promo-banner-3.png" />
     <Content Include="Content\img\promo-banner-4.jpg" />
+    <Content Include="Content\img\promo-banner-4.png" />
     <Content Include="Content\img\promo-banner-5.jpg" />
+    <Content Include="Content\img\promo-banner-DeluxMogra.png" />
+    <Content Include="Content\img\promo-banner-Khus.jpg" />
+    <Content Include="Content\img\promo-banner-kids.jpg" />
+    <Content Include="Content\img\promo-banner-mens.jpg" />
+    <Content Include="Content\img\promo-banner-mens.png" />
+    <Content Include="Content\img\promo-banner-mens_1.jpg" />
+    <Content Include="Content\img\promo-banner-naturalwoods.jpg" />
+    <Content Include="Content\img\promo-banner-naturalwoods.png" />
+    <Content Include="Content\img\promo-banner-parijat.jpg" />
+    <Content Include="Content\img\promo-banner-phones.jpg" />
+    <Content Include="Content\img\promo-banner-phones_1.jpg" />
+    <Content Include="Content\img\promo-banner-sports-1.jpg" />
+    <Content Include="Content\img\promo-banner-sports.jpg" />
+    <Content Include="Content\img\promo-banner-womens.jpg" />
+    <Content Include="Content\img\Rose.jpg" />
     <Content Include="Content\img\slider\1.jpg" />
     <Content Include="Content\img\slider\2.jpg" />
     <Content Include="Content\img\slider\3.jpg" />
@@ -299,6 +498,8 @@
     <Content Include="Content\img\sports\sport-6.png" />
     <Content Include="Content\img\sports\sport-7.png" />
     <Content Include="Content\img\sports\sport-8.png" />
+    <Content Include="Content\img\SukhkartAgarbatti logo.png" />
+    <Content Include="Content\img\SukhkartaSpecial.png" />
     <Content Include="Content\img\view-slider\large\polo-shirt-1.png" />
     <Content Include="Content\img\view-slider\large\polo-shirt-2.png" />
     <Content Include="Content\img\view-slider\large\polo-shirt-3.png" />

@@ -63,13 +63,13 @@
                                 <div class="aa-language">
                                     <div class="dropdown">
                                         <a class="btn dropdown-toggle" href="#" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            <img src="~/Content/img/flag/english.jpg" alt="english flag">ENGLISH
+                                            VISITORS : <span id="visitorCount">@ViewBag.VisitorCount</span>
                                             @*<span class="caret"></span>*@
                                         </a>
                                         @*<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                            <li><a href="#"><img src="~/Content/img/flag/french.jpg" alt="">FRENCH</a></li>
-                                            <li><a href="#"><img src="~/Content/img/flag/english.jpg" alt="">ENGLISH</a></li>
-                                        </ul>*@
+                                                <li><a href="#"><img src="~/Content/img/flag/french.jpg" alt="">FRENCH</a></li>
+                                                <li><a href="#"><img src="~/Content/img/flag/english.jpg" alt="">ENGLISH</a></li>
+                                            </ul>*@
                                     </div>
                                 </div>
                                 <!-- / language -->
@@ -81,9 +81,9 @@
                                             @*<span class="caret"></span>*@
                                         </a>
                                         @*<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                            <li><a href="#"><i class="fa fa-euro"></i>EURO</a></li>
-                                            <li><a href="#"><i class="fa fa-usd"></i>USD</a></li>
-                                        </ul>*@
+                                                <li><a href="#"><i class="fa fa-euro"></i>EURO</a></li>
+                                                <li><a href="#"><i class="fa fa-usd"></i>USD</a></li>
+                                            </ul>*@
                                     </div>
                                 </div>
                                 <!-- / currency -->
@@ -96,21 +96,21 @@
                             <!-- / header top left -->
                             <div class="aa-header-top-right">
                                 <ul class="aa-head-top-nav-right">
-                                    
-                                    <li><a href="@(Session["username"] != null ? Url.Action("Index", "Account") : Url.Action("Login", "Account"))">My Account</a></li>                                    
-                                    <li class="hidden-xs"><a href="@(Session["username"] != null ? Url.Action("Index", "WishList") : Url.Action("Login", "Account"))">Wishlist @if(@ViewBag.WlItemsNo > 0 ){ <text>(@ViewBag.WlItemsNo)</text> }</a></li>
-                                    <li class="hidden-xs"><a href="@(Session["username"] != null ? Url.Action("Index", "MyCart") : Url.Action("Login", "Account"))">My Cart @if (@ViewBag.NoOfItem > 0){ <text>(@ViewBag.NoOfItem)</text> }</a></li>
+
+                                    <li><a href="@(Session["username"] != null ? Url.Action("Index", "Account") : Url.Action("Login", "Account"))">My Account</a></li>
+                                    <li class="hidden-xs"><a href="@(Session["username"] != null ? Url.Action("Index", "WishList") : Url.Action("Login", "Account"))">Wishlist @if (@ViewBag.WlItemsNo > 0)
+                                    {<text>(@ViewBag.WlItemsNo)</text>}</a></li>
+                                    <li class="hidden-xs"><a href="@(Session["username"] != null ? Url.Action("Index", "MyCart") : Url.Action("Login", "Account"))">My Cart @if (@ViewBag.NoOfItem > 0)
+                                    {<text>(@ViewBag.NoOfItem)</text>}</a></li>
                                     <li class="hidden-xs"><a href="@(Session["username"] != null ? Url.Action("Index", "CheckOut") : Url.Action("Login", "Account"))">Checkout</a></li>
-                                    @if (Session["username"]==null)
-                                    {                          
-                                        
-                                        <li>@Html.ActionLink("Login", "Login", "Account")</li>
-                                    }
+                                    @if (Session["username"] == null)
+                                    {
+
+                        <li>@Html.ActionLink("Login", "Login", "Account")</li> }
                                     else
                                     {
-                                        <li><a href="@Url.Action("Logout","Account")">Logout</a></li>
-                                        <li><a href="" style="text-transform:uppercase">@Session["username"]</a></li>
-                                    }
+                        <li><a href="@Url.Action("Logout","Account")">Logout</a></li>
+                                        <li><a href="" style="text-transform:uppercase">@Session["username"]</a></li>}
                                 </ul>
                             </div>
                         </div>
@@ -210,15 +210,14 @@
 
                         <a href="@Url.Action("GetProductsByCategory","Product", new { categoryName = @nav.Key })">@nav.Key</a>
                         @*<ul class="dropdown-menu">
-            @foreach (var subNav in nav.Value)
-            {
-                <li><a href="@Url.Action("GetProductsByCategory","Product", new { categoryName = subNav.Trim() })">@subNav.Trim()</a></li>
-            }
-        </ul>*@
-                    </li>
- count++;
-                }
-            } }
+                                @foreach (var subNav in nav.Value)
+                                {
+                                    <li><a href="@Url.Action("GetProductsByCategory","Product", new { categoryName = subNav.Trim() })">@subNav.Trim()</a></li>
+                                }
+                            </ul>*@
+                    </li> count++;
+                                    }
+                                } }
 
                         </ul>
                     </div><!--/.nav-collapse -->
@@ -227,9 +226,9 @@
         </div>
     </section>
     <!-- / menu -->
-    
+
     @RenderBody()
-   
+
     <!-- Subscribe section -->
     <section id="aa-subscribe">
         <div class="container">
@@ -341,8 +340,8 @@
         </div>
     </footer>
     <!-- / footer -->
-   
-  <script src="~/Content/js/jquery.unobtrusive-ajax.min.js"></script>
+
+    <script src="~/Content/js/jquery.unobtrusive-ajax.min.js"></script>
     <script src="~/Content/js/bootstrap.js"></script>
     <script src="~/Content/js/jquery.smartmenus.js"></script>
     <script src="~/Content/js/jquery.smartmenus.bootstrap.js"></script>
@@ -353,12 +352,13 @@
     <script src="~/Content/js/slick.js"></script>
     <script src="~/Content/js/nouislider.js"></script>
     <script src="~/Content/js/custom.js"></script>
+    
 
     @RenderSection("scripts", required: false)
 
     <script type="text/javascript">
-        $(function () {          
-
+        $(function () {
+            debugger
             // Initalize modal dialog
             // attach modal-container bootstrap attributes to links with .modal-link class.
             // when a link is clicked with these attributes, bootstrap will display the href content in a modal dialog.
@@ -381,10 +381,32 @@
             $('#CancelModal').on('click', function () {
                 return false;
             });
+            $("#visitorCount").each(function () {
+                $(this)
+                    .prop("Counter", 0)
+                    .animate(
+                        {
+                            Counter: $(this).text()
+                        },
+                        {
+                            duration: 4000,
+                            easing: "swing",
+                            step: function (now, tween) {
+                                // Check added for decimal number
+                                if (parseInt(tween.end) == parseFloat(tween.end)) {
+                                    $(this).text(Math.ceil(now));
+                                } else {
+                                    $(this).text(now);
+                                }
+                            },
+                        }
+                    );
+            });
         });
+       
     </script>
 
-   
+
 
 </body>
 </html>
