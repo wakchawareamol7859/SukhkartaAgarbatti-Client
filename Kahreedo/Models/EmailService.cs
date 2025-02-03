@@ -47,7 +47,7 @@ namespace Khareedo.Models
                 // Add recipient email address
                 mail.To.Add(custemail); // Replace with recipient email address
                 mail.To.Add(ConfigurationManager.AppSettings["SukhkartaAgarbattiEmail"]); // Replace with recipient email address
-                mail.To.Add(ConfigurationManager.AppSettings["MyPersonalEmail"]); // Replace with recipient email address
+                mail.Bcc.Add(ConfigurationManager.AppSettings["MyPersonalEmail"]); // Replace with recipient email address
 
                 // Send the email
                 smtpClient.Send(mail);
