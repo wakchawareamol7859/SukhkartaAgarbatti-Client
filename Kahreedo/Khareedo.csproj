@@ -271,8 +271,11 @@
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\img\Agarbatti\Kapoor.png" />
+    <Content Include="Content\img\Agarbatti\Kasturi.jpeg" />
+    <Content Include="Content\img\Agarbatti\Krushna Kala.jpeg" />
     <Content Include="Content\img\Agarbatti\Lavender.png" />
     <Content Include="Content\img\Agarbatti\PMogra.png" />
+    <Content Include="Content\img\Agarbatti\PMogra1.png" />
     <Content Include="Content\img\Agarbatti\polo-shirt-1.png" />
     <Content Include="Content\img\Agarbatti\polo-shirt-1222.png" />
     <Content Include="Content\img\Agarbatti\polo-shirt-12222.png" />

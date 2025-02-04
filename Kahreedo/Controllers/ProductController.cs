@@ -155,7 +155,7 @@ namespace Khareedo.Controllers
             r.Name = getReview["name"];
             r.Email = getReview["email"];
             r.Review1 = getReview["message"];
-            r.Rate = Convert.ToInt32(getReview["rate"]);
+            r.Rate = Convert.ToInt32(getReview["rating"]);
             r.DateTime = DateTime.Now;
 
             db.Reviews.Add(r);

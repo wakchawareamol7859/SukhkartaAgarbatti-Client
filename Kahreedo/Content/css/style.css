@@ -4148,6 +4148,21 @@ img {
     font-size: 14px;
   }
 }
+.star-rating {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.star {
+    color: gray; /* Initial color for unselected stars */
+    transition: color 0.3s;
+}
+
+#selected-rating {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
 @media (max-width: 320px) {
   #aa-header .aa-header-bottom .aa-cartbox .aa-cartbox-summary::after,
   #aa-header .aa-header-bottom .aa-cartbox .aa-cartbox-summary::before {

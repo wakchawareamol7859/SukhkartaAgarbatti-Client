@@ -209,9 +209,9 @@
           <Property Name="ReviewID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CustomerID" Type="int" />
           <Property Name="ProductID" Type="int" />
-          <Property Name="Name" Type="varchar" MaxLength="50" />
-          <Property Name="Email" Type="varchar" MaxLength="50" />
-          <Property Name="Review" Type="varchar" MaxLength="500" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Review" Type="nvarchar(max)" />
           <Property Name="Rate" Type="int" />
           <Property Name="DateTime" Type="datetime" />
           <Property Name="isDelete" Type="bit" />
@@ -838,9 +838,9 @@
           <Property Name="ReviewID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CustomerID" Type="Int32" />
           <Property Name="ProductID" Type="Int32" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Review1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Review1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Rate" Type="Int32" />
           <Property Name="DateTime" Type="DateTime" Precision="3" />
           <Property Name="isDelete" Type="Boolean" />

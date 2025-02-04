@@ -129,33 +129,33 @@
                                         {
                                             foreach (var item in ViewBag.Reviews)
                                             {
-                            <li>
-                                <div class="media">
-                                    <div class="media-left">
-                                        <a href="#">
-                                            <img class="media-object" src="/Content/img/testimonial-img-3.jpg" alt="girl image">
-                                        </a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="media-heading"><strong>@item.Name</strong> - <span>@item.DateTime</span></h4>
-                                        <div class="aa-product-rating">
-                                            @for (int i = 1; i <= 5; i++)
-                                            {
-                                                if (@item.Rate >= i)
-                                                {
-                        <span class="fa fa-star"></span> }
-                    else
-                    {
-<span class="fa fa-star-o"></span>}
-}
-
+                                <li>
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <a href="#">
+                                                <img class="media-object" src="/Content/img/testimonial-img-3.jpg" alt="girl image">
+                                            </a>
                                         </div>
-                                        <p>@item.Review1</p>
+                                        <div class="media-body">
+                                            <h4 class="media-heading"><strong>@item.Name</strong> - <span>@item.DateTime</span></h4>
+                                            <div class="aa-product-rating">
+                                                @for (int i = 1; i <= 5; i++)
+                                                {
+                                                    if (@item.Rate >= i)
+                                                    {
+                                <span class="fa fa-star"></span> }
+                            else
+                            {
+                                <span class="fa fa-star-o"></span>}
+                        }
+
+                                            </div>
+                                            <p>@item.Review1</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
+                                </li>
 }
-                    }
+                        }
 
                                     </ul>
                                     <h4>Add a review</h4>
@@ -163,35 +163,45 @@
                                     {
                                         using (Html.BeginForm("AddReview", "Product", new { productID = @Model.ProductID }, FormMethod.Post, new { @class = "aa-review-form" }))
                                         {
-                        <div class="aa-your-rating">
-                            <p>Your Rating</p>
-                            @*<a id="one" href=""><span class="fa fa-star-o"></span></a>
-                                <a id="two" href="" ><span class="fa fa-star-o"></span></a>
-                                <a id="three" href="#"><span class="fa fa-star-o"></span></a>
-                                <a id="four" href="#"><span class="fa fa-star-o"></span></a>
-                                <a id="five" href="#"><span class="fa fa-star-o"></span></a>*@
-                            <input type="number" name="rate" min="1" max="5" maxlength="1" value="1" />
+                                <div class="aa-your-rating">
+                                    <p>Your Rating</p>
+                                    @*<a id="one" href=""><span class="fa fa-star-o"></span></a>
+        <a id="two" href="" ><span class="fa fa-star-o"></span></a>
+        <a id="three" href="#"><span class="fa fa-star-o"></span></a>
+        <a id="four" href="#"><span class="fa fa-star-o"></span></a>
+        <a id="five" href="#"><span class="fa fa-star-o"></span></a>*@
+                                    <input type="number" name="rate" min="1" max="5" maxlength="1" value="1"  hidden/>
 
-                        </div> <!-- review form -->
 
-                                            <div class="form-group">
-                                                <label for="message">Your Review</label>
-                                                <textarea class="form-control" rows="3" name="message"></textarea>
-                                            </div>
-                                                                <div class="form-group">
-                                                                    <label for="name">Name</label>
-                                                                    <input type="text" class="form-control" name="name" placeholder="Name">
-                                                                </div>
-                                                                                    <div class="form-group">
-                                                                                        <label for="email">Email</label>
-                                                                                        <input type="email" class="form-control" name="email" placeholder="example@gmail.com">
-                                                                                    </div>
+                                </div>
+                                                    <div class="star-rating">
+                                                        <span class="star" data-value="1">&#9733;</span>
+                                                        <span class="star" data-value="2">&#9733;</span>
+                                                        <span class="star" data-value="3">&#9733;</span>
+                                                        <span class="star" data-value="4">&#9733;</span>
+                                                        <span class="star" data-value="5">&#9733;</span>
+                                                    </div>
+                                                                        <input type="hidden" id="rating" name="rating" value="0" />
+                                                                        <!-- review form -->
 
-                                                                                                        <button type="submit" class="btn btn-default aa-review-submit">Submit</button> }
-                                                                                                }
-                                                                                                else
-                                                                                                {
-                                                                                    <label>Please login to Add your important Review about product.</label>}
+                                                                                                                <div class="form-group">
+                                                                                                                    <label for="message">Your Review</label>
+                                                                                                                    <textarea class="form-control" rows="3" name="message"></textarea>
+                                                                                                                </div>
+                                                                                                                                    <div class="form-group">
+                                                                                                                                        <label for="name">Name</label>
+                                                                                                                                        <input type="text" class="form-control" name="name" placeholder="Name">
+                                                                                                                                    </div>
+                                                                                                                                                        <div class="form-group">
+                                                                                                                                                            <label for="email">Email</label>
+                                                                                                                                                            <input type="email" class="form-control" name="email" placeholder="example@gmail.com">
+                                                                                                                                                        </div>
+
+                                                                                                                                                                            <button type="submit" class="btn btn-default aa-review-submit">Submit</button> }
+                                                                                                                                                                    }
+                                                                                                                                                                    else
+                                                                                                                                                                    {
+                                                                                                                                                        <label>Please login to Add your important Review about product.</label>}
                                 </div>
                             </div>
                         </div>
@@ -235,4 +245,29 @@
         bulletList.appendChild(listItem);
     });
 
+     const stars = document.querySelectorAll('.star');
+    const ratingInput = document.getElementById('rating');
+    const selectedRating = document.getElementById('selected-rating');
+
+    stars.forEach(star => {
+        star.addEventListener('click', () => {
+            let rating = star.getAttribute('data-value');
+            ratingInput.value = rating;
+            updateStars(rating);
+        });
+    });
+
+    function updateStars(rating) {
+        // Highlight stars up to the selected rating
+        stars.forEach(star => {
+            if (star.getAttribute('data-value') <= rating) {
+                star.style.color = 'gold';
+            } else {
+                star.style.color = 'gray';
+            }
+        });
+
+        // Update selected rating display
+        selectedRating.innerHTML = `You rated: ${rating} out of 5`;
+    }
 </script>
